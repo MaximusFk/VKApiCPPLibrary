@@ -10,9 +10,32 @@ TARGET = VKApiCPPLibrary
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES += vkapicpplibrary.cpp
+QMAKE_CXXFLAGS += -std=c++11
 
-HEADERS += vkapicpplibrary.h
+SOURCES += vkapicpplibrary.cpp \
+    ivkobject.cpp \
+    audio.cpp \
+    account.cpp \
+    vkobjectfactory.cpp \
+    message.cpp \
+    photo.cpp \
+    video.cpp \
+    user.cpp \
+    attachments.cpp
+
+HEADERS += vkapicpplibrary.h \
+    ivkobject.h \
+    audio.h \
+    json.hpp \
+    account.h \
+    vkobjectfactory.h \
+    Error.h \
+    permissions.h \
+    message.h \
+    photo.h \
+    video.h \
+    user.h \
+    attachments.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
